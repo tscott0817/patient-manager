@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container mt-3">
+      <!-- this code block is used to used to create a url link -->
+      <a href="{% url 'create'%}" >link to create a form</a>
+      <hr>
+      <!-- this code block is used to loop the data in the database -->
+      {% for data in queryset %}
+      <div class="list-group mb-3">
+        <a href="#" class="list-group-item list-group-item-action">First Name: {{data.name_first}}</a>
+        <a href="#" class="list-group-item list-group-item-action">Last Name: {{data.name_last}}</a>
+        <a href="#" class="list-group-item list-group-item-action">D.O.B: {{data.dob}}</a>
+        <a href="#" class="list-group-item list-group-item-action">Sex: {{data.sex}}</a>
+        <a href="#" class="list-group-item list-group-item-action">Race: {{data.race}}</a>
+      </div>
+      {% endfor %}
+      <hr>
+    </div>
+</body>
+</html>
